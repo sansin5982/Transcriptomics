@@ -100,9 +100,9 @@ prokaryotes emphasize rapid response in single-celled environments.
 An essential layer beyond DNA sequence is **epigenetics and its
 influence on gene expression**. Epigenetics refers to heritable
 modifications that affect gene activity without changing the underlying
-DNA sequence. Key mechanisms include DNA methylation, where methyl
+DNA sequence. Key mechanisms include **DNA methylation**, where methyl
 groups are added to cytosine residues, often silencing genes by blocking
-transcription factor access, and histone modifications, such as
+transcription factor access, and **histone modifications**, such as
 acetylation (which loosens chromatin for activation) or methylation
 (which can repress or activate depending on the site). These changes are
 dynamic and responsive to environmental factors, like diet or stress,
@@ -187,5 +187,10 @@ mutations in spinal muscular atrophy. This process underscores the
 significance of post-transcriptional control in evolution and
 complexity.
 
-In conclusion, these concepts form the bedrock of molecular biology,
-essential for understanding transcriptomics.
+These concepts—the central dogma, biomolecular structures, genes and
+genomes, RNA types, and gene regulation, with a spotlight on
+epigenetics—form the foundation of molecular biology. They are essential
+for understanding transcriptomics, which maps RNA to reveal gene
+expression dynamics. The expanded examples of epigenetics, from cancer
+to imprinting and environmental responses, highlight its pervasive role
+in shaping the transcriptome.
