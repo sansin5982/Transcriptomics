@@ -111,3 +111,81 @@ methylation in promoter regions can lead to tumor suppressor gene
 silencing in cancer. Epigenetics adds a regulatory dimension to the
 transcriptome, as it determines which genes are accessible for
 transcription.
+
+## Types of RNA
+
+RNA is not a monolithic entity; it encompasses various types, each with
+specialized roles in the central dogma and beyond. The three primary
+classes involved in protein synthesis are **messenger RNA (mRNA),
+transfer RNA (tRNA), and ribosomal RNA (rRNA)**.
+
+-   **mRNA** acts as the template for protein synthesis, transcribed
+    from DNA and carrying the genetic code from the nucleus to the
+    cytoplasm in eukaryotes. It’s processed through capping,
+    polyadenylation, and splicing before translation.
+
+-   **tRNA** serves as an adaptor, with an anticodon loop that pairs
+    with mRNA codons and an amino acid attachment site, ensuring
+    accurate amino acid incorporation during translation. There are
+    about 61 tRNAs corresponding to the genetic code’s codons.
+
+-   **rRNA** forms the core of ribosomes, the protein synthesis
+    machinery, and catalyzes peptide bond formation (ribozyme activity).
+    rRNA constitutes about 80% of cellular RNA, highlighting its
+    abundance.
+
+Beyond these:
+
+-   **non-coding RNAs (ncRNAs)** play critical regulatory roles without
+    being translated into proteins.
+
+-   **MicroRNAs (miRNAs)** are small (~22 nucleotides) RNAs that bind to
+    target mRNAs, leading to degradation or translational repression,
+    fine-tuning gene expression in processes like development and
+    cancer.
+
+-   **Long non-coding RNAs (lncRNAs)**, longer than 200 nucleotides,
+    regulate chromatin structure, transcription, and mRNA stability; for
+    example, Xist lncRNA silences one X chromosome in females.
+
+-   **Small interfering RNAs (siRNAs)** mediate RNA interference,
+    degrading specific mRNAs in antiviral defense or gene silencing
+    experiments.
+
+NcRNAs expand the regulatory landscape, with over 80% of the human
+genome transcribed into them, influencing metabolism, disease, and
+evolution.
+
+## Regulation of Gene Expression
+
+Finally, gene expression is not a passive process; it’s meticulously
+regulated at multiple levels to ensure precision and adaptability. We
+distinguish between **transcriptional regulation**, which controls the
+initiation and rate of transcription, and **post-transcriptional
+regulation**, which modulates RNA processing, stability, and
+translation.
+
+Transcriptional regulation involves **transcription factors (TFs)**,
+proteins that bind DNA to activate or repress genes. **Enhancers** are
+distal DNA sequences that boost transcription by looping to interact
+with promoters, often in a tissue-specific manner. Conversely,
+**silencers** repress transcription by recruiting repressive complexes.
+For example, the TF p53 activates enhancers for DNA repair genes during
+stress. These elements can function independently of orientation or
+distance, adding flexibility.
+
+Post-transcriptional regulation includes mRNA capping, polyadenylation,
+export, and degradation, often mediated by miRNAs or RNA-binding
+proteins. A key mechanism is **alternative splicing**, where exons are
+selectively included or excluded to generate multiple mRNA isoforms from
+one gene, vastly increasing proteomic diversity. Over 95% of human
+multi-exon genes undergo alternative splicing, enabling adaptations like
+isoform switches in development or disease. For instance, alternative
+splicing of the FN1 gene produces fibronectin isoforms for wound
+healing. Dysregulation can lead to pathologies, such as splicing
+mutations in spinal muscular atrophy. This process underscores the
+significance of post-transcriptional control in evolution and
+complexity.
+
+In conclusion, these concepts form the bedrock of molecular biology,
+essential for understanding transcriptomics.
