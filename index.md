@@ -2,4 +2,5 @@
 
 Chapters:
 
--   [Introduction](chapters/Introduction)
+-   [Introduction to Biology and Molecular
+    Biology](chapters/Introduction)
