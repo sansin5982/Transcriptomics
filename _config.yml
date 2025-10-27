@@ -1,0 +1,78 @@
+# ==========================================
+# 📘 Transcriptomics Course Configuration
+# ==========================================
+
+title: "Transcriptomics"
+description: "Fundamentals of Transcriptomics — from RNA sequencing basics to advanced expression analysis."
+
+# Theme
+theme: jekyll-theme-slate
+
+# Navigation Links (Custom Sidebar)
+nav:
+  - name: "Home"
+    link: /
+  - name: "Chapters"
+    link: /chapters/
+  - name: "Datasets"
+    link: /datasets/
+  - name: "Assignments"
+    link: /assignments/
+  - name: "References"
+    link: /references/
+  - name: "About"
+    link: /about/
+
+# Include additional folders for site build
+include:
+  - chapters/
+  - datasets/
+  - assignments/
+  - references/
+
+# Markdown configuration
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
+
+# Build settings
+permalink: pretty
+highlighter: rouge
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Author info (optional)
+author:
+  name: "Dr. Sandeep Kumar Singh"
+  email: "example@email.com"
+  github: "https://github.com/sansin5982"
+  linkedin: "https://linkedin.com/in/sandeep-kumar-singh-phd-50200919/"
+
+# Social links (optional footer)
+social_links:
+  - title: GitHub
+    url: https://github.com/sansin5982
+  - title: LinkedIn
+    url: https://linkedin.com/in/sandeep-kumar-singh-phd-50200919/
+
+# Footer text
+footer: >
+  © 2025 Transcriptomics Course — Created by Dr. Sandeep Kumar Singh.  
+  Built with ❤️ using Jekyll Slate Theme.
+
+# ==========================================
+# 📁 Folder Structure Reminder
+# ==========================================
+# _config.yml
+# index.md               → Home page
+# chapters/
+#   ├── chapter1.md
+#   ├── chapter2.md
+# datasets/
+# assignments/
+# references/
+# about.md
