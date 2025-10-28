@@ -7,3 +7,4 @@ Chapters:
 -   [Introduction to Transcriptomics](chapters/Transcriptomics)
 -   [The Transcriptome](chapters/Transcriptome)
 -   [Technologies for Transcriptomic Analysis](chapters/Technologies)
+-   [Experimental Design in Transcriptomics](chapters/Experiment)
