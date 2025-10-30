@@ -23,7 +23,7 @@ method, analysis. A vague question yields vague results.
     and SCD1 are &gt;2-fold upregulated in obese vs. lean human liver
     biopsies.”
 
-**Novice tip**: Use the **PICO framework**:
+**Tip**: Use the **PICO framework**:
 
 -   **P**opulation: Obese vs. lean adults
 -   **I**ntervention/Exposure: Obesity
@@ -31,24 +31,55 @@ method, analysis. A vague question yields vague results.
 -   **O**utcome: Differential gene expression
 
 **Example**: A 2025 study asked: “Does Alzheimer’s disease alter
-microglial activation in the hippocampus?” → Hypothesis: TREM2 and
-CX3CR1 are upregulated in AD patient microglia. → This directed
-scRNA-Seq on hippocampal tissue, leading to targeted biomarker
-discovery.
+microglial activation in the hippocampus?”
+
+→ Hypothesis: TREM2 and CX3CR1 are upregulated in AD patient microglia.
+→ This directed scRNA-Seq on hippocampal tissue, leading to targeted
+biomarker discovery.
 
 ### 2. Selection of Appropriate Samples
 
 **Why it matters**: The transcriptome is **tissue-, cell-, and
 condition-specific**. Wrong samples = wrong answers.
 
-**Step-by-step guide**: |Step|Action|Example| |:—|:—|:—| |1|Define the
-biological context|Liver for metabolic disease, not blood| |2|Choose
-sample type|Fresh-frozen tissue, FFPE, single cells| |3|Match
-conditions|Age, sex, BMI, medication| |4|Avoid confounders|Smoking,
-inflammation|
+**Step-by-step guide**
 
-**Novice trap**: Using whole blood for brain-specific questions →
-diluted signal.
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Step</th>
+<th style="text-align: left;">Action</th>
+<th style="text-align: left;">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Define the biological context</td>
+<td style="text-align: left;">Liver for metabolic disease, not
+blood</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Choose sample type</td>
+<td style="text-align: left;">Fresh-frozen tissue, FFPE, single
+cells</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Match conditions</td>
+<td style="text-align: left;">Age, sex, BMI, medication</td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Avoid confounders</td>
+<td style="text-align: left;">Smoking, inflammation</td>
+</tr>
+</tbody>
+</table>
+
+**Trap**: Using whole blood for brain-specific questions → diluted
+signal.
 
 **2025 Example**: A lung cancer study compared **tumor core**
 vs. **tumor edge** vs. **healthy lung** tissue using spatial
@@ -75,7 +106,7 @@ signal from noise.
 
 **Example**: A 2025 diabetes study used n = 5 obese and n = 5 lean
 patients. Power analysis showed 80% power to detect 2-fold changes at
-FDR &lt; 0.05. Novice tip: Under-replication → false positives.
+FDR &lt; 0.05. **Tip**: Under-replication → false positives.
 Over-replication → wasted resources.
 
 ## Sample Preparation
@@ -120,7 +151,7 @@ tissue):
 </tbody>
 </table>
 
-**Novice tip**: Degraded RNA → 3’ bias in sequencing. Always check
+**Tip**: Degraded RNA → 3’ bias in sequencing. Always check
 electropherogram.
 
 **2025 Example**: A brain bank study rejected 30% of samples with RIN
@@ -129,10 +160,40 @@ electropherogram.
 ### 2. Handling Low-Input or Degraded RNA Samples
 
 **Challenge**: Biopsies, laser-capture microdissection, FFPE samples.
-**Solutions**: |Sample Type|Method|Key Step| |:—|:—|:—| |**Low input
-(&lt;10 ng)**|Smart-Seq2, CEL-Seq2|Full-length amplification|
-|**FFPE**|TruSeq RNA Exome, Ovation FFPE|Deparaffinization + rRNA
-depletion| |**Degraded**|RNAtag-Seq, BRB-Seq|3’ end capture|
+**Solutions**:
+
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Sample Type</th>
+<th style="text-align: left;">Method</th>
+<th style="text-align: left;">Key Step</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Low input (&lt;10
+ng)</strong></td>
+<td style="text-align: left;">Smart-Seq2, CEL-Seq2</td>
+<td style="text-align: left;">Full-length amplification</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>FFPE</strong></td>
+<td style="text-align: left;">TruSeq RNA Exome, Ovation FFPE</td>
+<td style="text-align: left;">Deparaffinization + rRNA depletion</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Degraded</strong></td>
+<td style="text-align: left;">RNAtag-Seq, BRB-Seq</td>
+<td style="text-align: left;">3’ end capture</td>
+</tr>
+</tbody>
+</table>
 
 **Example**: A 2025 pancreatic cancer study used **FFPE blocks from
 2015** with a new **FFPE-optimized RNA-Seq kit**, recovering 80% of
@@ -153,7 +214,7 @@ counting**: Trypan blue or automated (Countess) **3. Loading**: 10x
 Chromium → target 5,000–10,000 cells **4. Library QC**: Check cDNA size
 (Tapestation)
 
-**Novice tip**: Dead cells release RNA → false ambient signal. Use
+**Tip**: Dead cells release RNA → false ambient signal. Use
 **CellBender** to remove. **2025 Example**: A kidney scRNA-Seq study
 used **fresh biopsies within 30 minutes** to achieve 92% viability,
 revealing a novel podocyte subtype in lupus nephritis.
@@ -223,3 +284,55 @@ normalization</strong></td>
 Example**: A multi-lab RNA-Seq study used **TMM + batch correction
 (ComBat-seq)** to harmonize data from 12 centers, identifying robust
 COVID-19 biomarkers.
+
+## Study Types:
+
+### 1. Differential Expression Studies
+
+**Goal**: Find genes changing between conditions (e.g., disease
+vs. healthy) **Design**: \* **Case-control**: n ≥ 3 per group \*
+**Paired design**: Before/after treatment (stronger)
+
+#### Analysis pipeline:
+
+1.  QC → Trim adapters
+2.  Align (STAR/HISAT2)
+3.  Count (featureCounts)
+4.  Normalize (DESeq2/edgeR)
+5.  Test (Wald, LRT)
+
+**Example**: A 2025 colorectal cancer study (n=50 tumors vs. 50 normals)
+found APC downregulated and MYC upregulated, validated by qPCR.
+
+### 2. Time-Course Experiments
+
+**Goal**: Capture dynamic changes (e.g., drug response over 0–48h)
+
+**Design**:
+
+-   **Time points**: 0, 1, 6, 24, 48h (n=3 each)
+-   **Model**: Use ImpulseDE or maSigPro
+
+**Example**: A 2025 immunotherapy study tracked **PD-1 blockade
+response** in melanoma:
+
+-   0h: Baseline
+-   6h: Immune activation (IFNG ↑)
+-   24h: T-cell exhaustion (LAG3 ↑) → Guided combination therapy timing.
+
+### 3. Comparative Transcriptomics Across Species
+
+**Goal**: Identify conserved or divergent responses (e.g., stress in
+human vs. mouse)
+
+**Design**:
+
+-   Ortholog mapping (Ensembl Biomart)
+-   Normalize separately, then integrate
+
+**Example**: A 2025 heat stress study compared **human**, **mouse**, and
+**zebrafish**:
+
+-   Conserved: HSP70 upregulation
+-   Divergent: Fish-specific gill genes → Improved mouse model relevance
+    for human trials.
