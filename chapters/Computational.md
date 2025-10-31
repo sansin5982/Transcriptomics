@@ -43,9 +43,14 @@ tool</td>
 
 #### Real Example:
 
-> **Lung Cancer RNA-Seq** \* 100 patient samples `FastQC` showed
-> **adapter contamination** in 30 samples Trimmed → **recovered 15% more
-> reads** → found EGFR mutation missed before
+> **Lung Cancer RNA-Seq**
+
+> -   100 patient samples
+
+> -   `FastQC` showed **adapter contamination** in 30 samples
+
+> -   Trimmed → **recovered 15% more reads** → found EGFR mutation
+>     missed before
 
 ### 1.2 Read Alignment and Mapping
 
@@ -86,9 +91,13 @@ tool</td>
 
 #### Real Example:
 
-> **Alzheimer’s Brain Study** \* Used **STAR** to align 1 billion reads
-> \* Found **90% mapped** → **10% unmapped = novel RNAs** \* →
-> Discovered **new lncRNA** near APP gene
+> **Alzheimer’s Brain Study**
+
+> -   Used **STAR** to align 1 billion reads
+
+> -   Found **90% mapped** → **10% unmapped = novel RNAs**
+
+> -   → Discovered **new lncRNA** near APP gene
 
 ### 1.3 Handling Alternative Splicing & Novel Transcripts
 
@@ -117,9 +126,13 @@ Problem: One gene → multiple RNA versions (isoforms)
 
 #### Real Example:
 
-> **Muscular Dystrophy** \* Patient had normal DMD gene DNA but weak
-> muscles \* StringTie found exon 45 skipped → short protein \* →
-> Exon-skipping therapy (Exondys 51) saved walking ability
+> **Muscular Dystrophy**
+
+> -   Patient had normal DMD gene DNA but weak muscles
+
+> -   StringTie found exon 45 skipped → short protein
+
+> -   → Exon-skipping therapy (Exondys 51) saved walking ability
 
 ## 2. Quantification of Gene Expression
 
@@ -159,9 +172,11 @@ class="math inline">$\frac{\frac{reads}{\text{gene length}}} *
 
 #### Real Example:
 
-> **Liver vs. Brain Comparison** \* Used **TPM** → ALB (liver protein)
-> **100 x higher in liver** \* RPKM gave **wrong ratio** due to library
-> size
+> **Liver vs. Brain Comparison**
+
+> -   Used **TPM** → ALB (liver protein) **100 x higher in liver**
+
+> -   RPKM gave **wrong ratio** due to library size
 
 ### 2.2 Tools for Quantification
 
@@ -194,9 +209,14 @@ class="math inline">$\frac{\frac{reads}{\text{gene length}}} *
 
 #### Real Example:
 
-> **COVID-19 Drug Screen** \* 10,000 compounds, 96-well plates \* Used
-> **Kallisto** → quantified **20,000 genes in 3 minutes per plate** \* →
-> Found **remdesivir blocks viral RNA polymerase**
+> **COVID-19 Drug Screen**
+
+> -   10,000 compounds, 96-well plates
+
+> -   Used **Kallisto** → quantified **20,000 genes in 3 minutes per
+>     plate**
+
+> -   → Found **remdesivir blocks viral RNA polymerase**
 
 ## 3. Differential Expression Analysis
 
@@ -232,9 +252,32 @@ class="math inline">$\frac{\frac{reads}{\text{gene length}}} *
 
 ### 3.2 Fold Change, p-value, FDR
 
-|Term|Meaning|Threshold| |log2FC &gt; 1|2x upregulated|| |p &lt;
-0.05|Statistically significant|| |FDR &lt; 0.05|Controls false
-positives|Use this!|
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Term</th>
+<th style="text-align: left;">Meaning</th>
+<th style="text-align: left;">Threshold</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">log2FC &gt; 1</td>
+<td style="text-align: left;">2x upregulated</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">p &lt; 0.05</td>
+<td style="text-align: left;">Statistically significant</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">FDR &lt; 0.05</td>
+<td style="text-align: left;">Controls false positives</td>
+<td style="text-align: left;">Use this!</td>
+</tr>
+</tbody>
+</table>
 
 #### Volcano plot
 
@@ -243,9 +286,13 @@ positives|Use this!|
 
 → Top-right = **up in disease, significant** \#### Real Example:
 
-> **Parkinson’s vs. Healthy Brain** \* DESeq2 → 1,200 genes changed \*
-> Top hit: SNCA (alpha-synuclein) ↑ 4-fold, FDR = 10<sup>−</sup>15 \* →
-> New drug targeting SNCA RNA in clinical trial
+> **Parkinson’s vs. Healthy Brain**
+
+> -   DESeq2 → 1,200 genes changed
+
+> -   Top hit: SNCA (alpha-synuclein) ↑ 4-fold, FDR = 10<sup>−</sup>15
+
+> -   → New drug targeting SNCA RNA in clinical trial
 
 ## 4. Functional Annotation & Pathway Analysis
 
@@ -273,10 +320,15 @@ Molecular Function</td>
 
 #### Real Example:
 
-> **Obesity RNA-Seq** \* 500 upregulated genes → input to Enrichr \* Top
-> GO: “Lipid metabolic process” (*p* = 10<sup>−</sup>25) \* KEGG: “PPAR
-> signaling pathway” \* → Drug pioglitazone activates PPAR → weight loss
-> in trial
+> **Obesity RNA-Seq**
+
+> -   500 upregulated genes → input to Enrichr
+
+> -   Top GO: “Lipid metabolic process” (*p* = 10<sup>−</sup>25)
+
+> -   KEGG: “PPAR signaling pathway”
+
+> -   → Drug pioglitazone activates PPAR → weight loss in trial
 
 ### 4.2 Tools: DAVID, Enrichr, GSEA
 
@@ -305,9 +357,13 @@ Molecular Function</td>
 
 #### GSEA Example (2025):
 
-> **Cancer vs. Normal** \* GSEA showed **“Hypoxia pathway”** enriched
-> (NES = 2.8) → Tumors **resist chemotherapy** in low oxygen → New
-> **hypoxia-activated** prodrug in Phase II
+> **Cancer vs. Normal**
+
+> -   GSEA showed **“Hypoxia pathway”** enriched (NES = 2.8)
+
+> → Tumors **resist chemotherapy** in low oxygen
+
+> → New **hypoxia-activated** prodrug in Phase II
 
 ## 5. Visualization of Transcriptomic Data
 
@@ -338,9 +394,11 @@ Molecular Function</td>
 
 Real Example:
 
-> **5 Cancer Types** \* Heatmap → **clear clusters**: breast, lung,
-> colon \* → AI model **99% accurate** in diagnosing cancer type from
-> RNA
+> **5 Cancer Types**
+
+> -   Heatmap → **clear clusters**: breast, lung, colon
+
+> -   → AI model **99% accurate** in diagnosing cancer type from RNA
 
 ### 5.2 Dimensionality Reduction: PCA, t-SNE, UMAP
 
@@ -366,9 +424,13 @@ t-SNE)</td>
 
 #### PCA Example:
 
-> **scRNA-Seq of Immune Cells** \* PCA → **PC1 = T cells vs. B cells**
-> \* PC2 = **activated vs. resting** → Found **new exhausted T-cell
-> state** in chronic infection
+> **scRNA-Seq of Immune Cells**
+
+> -   PCA → **PC1 = T cells vs. B cells**
+
+> -   PC2 = **activated vs. resting**
+
+> → Found **new exhausted T-cell state** in chronic infection
 
 ### 5.3 Tools: R, Python, Tableau
 
@@ -397,8 +459,11 @@ t-SNE)</td>
 
 #### Real Example:
 
-> **Hospital Dashboard** \* Tableau + RNA-Seq → **live cancer subtype
-> predictor** \* Surgeon uploads biopsy → **result in 2 hours**
+> **Hospital Dashboard**
+
+> -   Tableau + RNA-Seq → **live cancer subtype predictor**
+
+> -   Surgeon uploads biopsy → **result in 2 hours**
 
 #### First Analysis Pipeline
 
