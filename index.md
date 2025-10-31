@@ -9,3 +9,4 @@ Chapters:
 -   [Technologies for Transcriptomic Analysis](chapters/Technologies)
 -   [Experimental Design in Transcriptomics](chapters/Experiment)
 -   [Methods for Transcriptome Profiling](chapters/Methods)
+-   [Computational Methods in Transcriptomics](chapters/Computational)
