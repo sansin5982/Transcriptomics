@@ -213,3 +213,78 @@ Raw data: `.fastq` files with barcodes + UMIs
 >
 > -   Removed high-mito cells → found microglia activation not cell
 >     death
+
+## 3. Analysis of Single-Cell Data
+
+### 3.1 Cell Clustering and Identification
+
+**Goal**: Group cells with **similar gene expression** **Tools: Seurat
+(R), Scanpy (Python)**
+
+#### Steps:
+
+1.  **Normalize** → log(TPM/10,000 + 1)
+2.  **Find variable genes** → top 2,000
+3.  **PCA** → reduce to 50 dimensions
+4.  **Cluster** → Louvain algorithm
+5.  **UMAP** → 2D map
+
+**Marker Genes** → label clusters:
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Cluster</th>
+<th style="text-align: left;">Marker</th>
+<th style="text-align: left;">Cell Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;"><em>INS</em></td>
+<td style="text-align: left;">Beta Cells</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;"><em>GFAP</em></td>
+<td style="text-align: left;">Astrocytes</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;"><em>CD3D</em></td>
+<td style="text-align: left;">T-cells</td>
+</tr>
+</tbody>
+</table>
+
+#### Real Example
+
+> **Human Heart Atlas**
+>
+> -   500,000 heart cells → **14 clusters**
+>
+> -   Cluster 7: MYH7 high → **cardiomyocytes**
+>
+> -   Cluster 12: PECAM1 → **endothelial**
+>
+> → Found **fibroblasts turn into myofibroblasts** in heart failure
+
+### 3.2 Trajectory Inference and Pseudotime
+
+**Goal**: **Order cells in time** (like a movie) **Tools: Monocle3,
+Slingshot** **Pseudotime = biological time**, not clock time
+
+#### Real Example
+
+> **Blood Development**
+>
+> -   Stem cell → red blood cell
+>
+> -   Monocle3 → **pseudotime trajectory**
+>
+> Early: GATA2 high
+>
+> Late: HBB (hemoglobin) high
+>
+> → Found **drug blocks at day 5** → new anemia treatment
