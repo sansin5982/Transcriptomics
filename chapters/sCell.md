@@ -288,3 +288,144 @@ Slingshot** **Pseudotime = biological time**, not clock time
 > Late: HBB (hemoglobin) high
 >
 > → Found **drug blocks at day 5** → new anemia treatment
+
+### 3.3 Tools for scRNA-Seq Analysis
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Tool</th>
+<th style="text-align: left;">Langauge</th>
+<th style="text-align: left;">Best for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Seurat</td>
+<td style="text-align: left;">R</td>
+<td style="text-align: left;">Clustering, integration</td>
+</tr>
+<tr>
+<td style="text-align: left;">Scanpy</td>
+<td style="text-align: left;">Python</td>
+<td style="text-align: left;">Speed, scalability</td>
+</tr>
+<tr>
+<td style="text-align: left;">CellPhoneDB</td>
+<td style="text-align: left;">Python</td>
+<td style="text-align: left;">Cell-cell communication</td>
+</tr>
+</tbody>
+</table>
+
+#### Real Example:
+
+> **Tumor-Immune Talk**
+>
+> -   Scanpy → clusters
+>
+> -   CellPhoneDB → **cancer cells signal macrophages** via CCL2
+>
+> -   → **Anti-CCL2 drug** → immune attack restored
+
+## 4. Applications and Challenges
+
+### 4.1 Mapping Cellular Diversity in Tissues
+
+**Purpose**: Build **cell atlases** \#### Real Example &gt; **Human Cell
+Atlas Project** &gt; &gt; \* 100+ organs → 50 million cells &gt; &gt; \*
+Found **new kidney cell type** that filters toxins &gt; &gt; → **Drug
+toxicity test** now uses this cell
+
+### 4.2 Studying Rare Cell Populations
+
+**Purpose**: Find **needles in haystack** \#### Real Example:
+
+> **Pancreatic Cancer**
+>
+> -   0.5% of cells = **cancer stem cells**
+>
+> -   scRNA-Seq → CD133+ALDH1+
+>
+> -   → Targeted therapy killed only these → tumor regrowth stopped
+
+### 4.3 Technical Noise and Batch Effects
+
+#### Challenges:
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Problem</th>
+<th style="text-align: left;">Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Dropout (gene not detected)</td>
+<td style="text-align: left;">Imputation (MAGIC, scVI)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Batch effect</td>
+<td style="text-align: left;">Harmony, Seurat Integration</td>
+</tr>
+<tr>
+<td style="text-align: left;">Doublets</td>
+<td style="text-align: left;">DoubletFinder</td>
+</tr>
+</tbody>
+</table>
+
+#### Real Example:
+
+> **Multi-Lab Brain Study**
+>
+> -   5 labs → different protocols
+>
+> -   **Harmony** removed batch → found **true Alzheimer’s microglia
+>     state**
+>
+> -   Without fix → **false cluster**
+
+#### Expected UMAP
+
+    [Healthy] → [Infected: T-cells activated] → [Recovered]
+
+#### Summary Table
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Step</th>
+<th style="text-align: left;">Tool</th>
+<th style="text-align: left;">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Isolation</td>
+<td style="text-align: left;">10x Chromium</td>
+<td style="text-align: left;">Pancreas beta subtypes</td>
+</tr>
+<tr>
+<td style="text-align: left;">QC</td>
+<td style="text-align: left;">Seurat</td>
+<td style="text-align: left;">Alzheimer’s microglia</td>
+</tr>
+<tr>
+<td style="text-align: left;">Clustering</td>
+<td style="text-align: left;">UMAP</td>
+<td style="text-align: left;">Heart cell atlas</td>
+</tr>
+<tr>
+<td style="text-align: left;">Trajectory</td>
+<td style="text-align: left;">Monocle3</td>
+<td style="text-align: left;">Blood development</td>
+</tr>
+<tr>
+<td style="text-align: left;">Application</td>
+<td style="text-align: left;">Rare cells</td>
+<td style="text-align: left;">Cancer stem cells</td>
+</tr>
+</tbody>
+</table>
