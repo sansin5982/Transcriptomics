@@ -161,3 +161,55 @@ cell is hiding.”
 > -   UMI showed T-cells had 1,000 PD-1 RNAs each
 >
 > -   → Anti-PD-1 drug worked → tumor gone in 6 months
+
+### 2.3 Data Preprocessing and Quality Control
+
+Raw data: `.fastq` files with barcodes + UMIs
+
+    # 1. Demultiplex
+    cellranger mkfastq
+
+    # 2. Align + Count
+    cellranger count --id=sample
+
+    # 3. QC in R (Seurat)
+    library(Seurat)
+    pbmc <- CreateSeuratObject(counts, min.cells=3, min.features=200)
+
+#### QC Filters:
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Metric</th>
+<th style="text-align: left;">Good</th>
+<th style="text-align: left;">Bad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Genes per cell</td>
+<td style="text-align: left;">500-5000</td>
+<td style="text-align: left;">&lt;200 (dead), &gt;7,000 (doublet)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Mitochondrial %</td>
+<td style="text-align: left;">&lt;10%</td>
+<td style="text-align: left;">&gt;20% (dying)</td>
+</tr>
+<tr>
+<td style="text-align: left;">UMIs</td>
+<td style="text-align: left;">&gt;1,000</td>
+<td style="text-align: left;">&lt;500</td>
+</tr>
+</tbody>
+</table>
+
+#### Real Example:
+
+> Alzheimer’s Brain
+>
+> -   100,000 cells → after QC → 70,000 high-quality
+>
+> -   Removed high-mito cells → found microglia activation not cell
+>     death
