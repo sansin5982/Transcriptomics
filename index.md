@@ -10,3 +10,4 @@ Chapters:
 -   [Experimental Design in Transcriptomics](chapters/Experiment)
 -   [Methods for Transcriptome Profiling](chapters/Methods)
 -   [Computational Methods in Transcriptomics](chapters/Computational)
+-   [Single-Cell Transcriptomics](chapters/sCell)
