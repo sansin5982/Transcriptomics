@@ -11,3 +11,4 @@ Chapters:
 -   [Methods for Transcriptome Profiling](chapters/Methods)
 -   [Computational Methods in Transcriptomics](chapters/Computational)
 -   [Single-Cell Transcriptomics](chapters/sCell)
+-   [Advanced Topics in Transcriptomics](chapters/AdTopics)
