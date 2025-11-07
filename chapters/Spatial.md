@@ -32,6 +32,11 @@ studying complex diseases like cancer and neurodegeneration, informing
 drug targeting, precision medicine, and tissue engineering.
 
 <table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
 <thead>
 <tr>
 <th style="text-align: left;">Key Concept</th>
@@ -42,425 +47,147 @@ drug targeting, precision medicine, and tissue engineering.
 <tbody>
 <tr>
 <td style="text-align: left;">Spatial Coordinates</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">GPS-like mapping of transcripts to tissue
+locations.</td>
+<td style="text-align: left;">Enables neighborhood analysis (e.g.,
+tumor-immune interfaces).</td>
+</tr>
+<tr>
+<td style="text-align: left;">Transcript Capture</td>
+<td style="text-align: left;">Barcoded probes or arrays bind RNA in
+situ.</td>
+<td style="text-align: left;">Captures whole transcriptome or targeted
+genes without dissociation.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Multi-Modal Integration</td>
+<td style="text-align: left;">Combines RNA with proteins,
+epigenomics.</td>
+<td style="text-align: left;">Provides holistic views of cellular
+states.</td>
 </tr>
 </tbody>
 </table>
 
-### 1.1 Definition and Historical Context
+## 2. Technologies and Methods
 
--   **Spatial transcriptomics (ST)**: Technology that measures gene
-    expression while preserving the native spatial coordinates of RNA
-    molecules in tissue.
--   **First breakthrough: 2016 – Ståhl et al.** introduced the **first
-    array-based ST** using barcoded spots \[1\].
--   **Current Status**: Over 50 commercial platforms, **&gt;10,000
-    publications**, and **routine clinical** use in oncology.
+ST technologies are categorized into imaging-based (using fluorescence
+in situ hybridization for targeted detection) and sequencing-based
+(using barcoded arrays for unbiased profiling). Imaging-based methods
+excel in high-resolution, targeted studies, while sequencing-based offer
+broader coverage but lower resolution.
 
-### 1.2 Importance in Preserving Tissue Architecture
+#### Imaging-Based Technologies
 
--   Bulk RNA-Seq → **averages**
--   scRNA-Seq → **dissociates**
--   **ST → reconstructs tissue context**
--   Enables study of **cell-cell interactions, gradients, niches**, and
-    **microenvironments**.
-
-### 1.3 Comparison with Bulk and Single-Cell RNA-Seq
+These rely on single-molecule FISH (smFISH) for subcellular precision,
+suitable for hypothesis-driven research.
 
 <table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
 <thead>
 <tr>
-<th style="text-align: left;">Feature</th>
-<th style="text-align: left;">Bulk</th>
-<th style="text-align: left;">scRNA-Seq</th>
-<th style="text-align: left;">Spatial</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">Resolution</td>
-<td style="text-align: left;">Tissue</td>
-<td style="text-align: left;">scRNA-Seq</td>
-<td style="text-align: left;">Spatial</td>
-</tr>
-<tr>
-<td style="text-align: left;">Spatial Info</td>
-<td style="text-align: left;">Lost</td>
-<td style="text-align: left;">Lost</td>
-<td style="text-align: left;">Preserved</td>
-</tr>
-<tr>
-<td style="text-align: left;">Throughput</td>
-<td style="text-align: left;">High</td>
-<td style="text-align: left;">Medium</td>
-<td style="text-align: left;">Variable</td>
-</tr>
-<tr>
-<td style="text-align: left;">Cost</td>
-<td style="text-align: left;">Low</td>
-<td style="text-align: left;">High</td>
-<td style="text-align: left;">Medium-High</td>
-</tr>
-</tbody>
-</table>
-
-## 2. Principles of Spatially Resolved Gene Expression
-
-### 2.1 Spatial Barcoding and Coordinate Systems
-
--   Each **location** in tissue gets a **unique barcode** (DNA
-    sequence).
--   RNA captured → tagged with barcode → sequenced → **mapped back to
-    (x,y)**.
-
-### 2.2 In Situ vs. Capture-Based Approaches
-
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Method</th>
-<th style="text-align: left;">Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">In situ</td>
-<td style="text-align: left;">Direct imaging in tissue</td>
-<td style="text-align: left;">MERFISH, seqFISH</td>
-</tr>
-<tr>
-<td style="text-align: left;">Capture-based</td>
-<td style="text-align: left;">RNA diffuses to barcoded array</td>
-<td style="text-align: left;">Visium, Slide-seq</td>
-</tr>
-</tbody>
-</table>
-
-### 2.3 Resolution Scales
-
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Scale</th>
-<th style="text-align: left;">Size</th>
 <th style="text-align: left;">Technology</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">Subcellular</td>
-<td style="text-align: left;">&lt;1 µm</td>
-<td style="text-align: left;">Stereo-seq, NanoString</td>
-</tr>
-<tr>
-<td style="text-align: left;">Cellular</td>
-<td style="text-align: left;">1–10 µm</td>
-<td style="text-align: left;">MERFISH, Xenium</td>
-</tr>
-<tr>
-<td style="text-align: left;">Multicellular</td>
-<td style="text-align: left;">50–100 µm</td>
-<td style="text-align: left;">Visium</td>
-</tr>
-</tbody>
-</table>
-
-## Imaging-Based Spatial Technologies
-
-### 3.1 MERFISH (Multiplexed Error-Robust FISH)
-
--   **Principle**: Sequential hybridization + error-correcting barcodes
--   **Genes**: Up to 1,000
--   **Resolution**: Single-molecule
--   MERFISH v2 → **10,000 genes, 3D brain mapping \[3\]**
-
-### 3.2 seqFISH and seqFISH+
-
--   **seqFISH+**: 10,000 genes in **single cells**
--   Used in **mouse embryo atlas** → revealed **Hox code gradients**
-    \[4\]
-
-### 3.3 STARmap and ExSeq
-
--   **STARmap**: 3D expansion + sequencing
--   **ExSeq**: Expansion sequencing for **proteins + RNA**
-
-### 3.4 HCR Imaging
-
--   Signal amplification for **low-expressed genes**
-
-## 4. Sequencing-Based Spatial Technologies
-
-### 4.1 10x Genomics Visium Platform
-
--   **Spot size**: 55 µm (~10–20 cells)
--   **Genes**: Genome-wide
--   **2025: Visium HD → 2 µm spots**
--   **Clinical use**: Intraoperative tumor margin assessment
-
-### 4.2 Slide-seq and Slide-seqV2
-
--   **Bead-based, 10 µm resolution**
--   **2025**: Used in **mouse brain connectomics**
-
-### 4.3 Stereo-seq (BGI)
-
--   **DNA nanoball (DNB)** array
--   **Resolution: 500 nm (subcellular)**
--   **2025: Full mouse brain in 3D \[5\]**
-
-### 4.4 HDST (High-Density Spatial Transcriptomics)
-
--   **2 µm beads, high throughput**
-
-## 5. Emerging and Hybrid Technologies
-
-### 5.1 Xenium (10x In Situ Sequencing)
-
--   **In situ sequencing** → no capture loss
--   **Panel**: 5,000 genes
--   **2025**: FFPE-compatible
-
-### 5.2 GeoMX DSP (NanoString)
-
--   **ROI selection** + NGS or nCounter
--   **Proteins + RNA**
-
-### 5.3 NanoString CosMx
-
--   **Single-cell, 6,000-plex**
--   **2025: Human cancer atlas**
-
-### 5.4 Light-seq and DBiT
-
--   **Light-activated barcoding**
--   **DNA-barcoded imaging + sequencing**
-
-## 6. Sample Preparation and Tissue Handling
-
-### 6.1 Fresh-Frozen vs. FFPE
-
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Resolution</th>
+<th style="text-align: left;">Throughput</th>
 <th style="text-align: left;">Pros</th>
 <th style="text-align: left;">Cons</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">Fresh-frozen</td>
-<td style="text-align: left;">High RNA quality</td>
-<td style="text-align: left;">Needs −80°C</td>
+<td style="text-align: left;">Xenium (10x Genomics)</td>
+<td style="text-align: left;">~1 μm (subcellular)</td>
+<td style="text-align: left;">Low (hours-days)</td>
+<td style="text-align: left;">High sensitivity/specificity;
+FFPE-compatible; up to 6,000 genes; custom panels.</td>
+<td style="text-align: left;">Targeted only; long imaging; no protein
+co-detection; high custom cost.</td>
 </tr>
 <tr>
-<td style="text-align: left;">FFPE</td>
-<td style="text-align: left;">Archival</td>
-<td style="text-align: left;">RNA degradation</td>
+<td style="text-align: left;">MERSCOPE (Akoya Biosciences</td>
+<td style="text-align: left;">~1 μm (subcellular)</td>
+<td style="text-align: left;">Low</td>
+<td style="text-align: left;">Customizable (up to 1,000 genes);
+RNA/protein co-detection; FFPE/cells.</td>
+<td style="text-align: left;">Gene limit; long times; lower FFPE
+sensitivity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">CosMx SMI (NanoString)</td>
+<td style="text-align: left;">~1 μm (subcellular)</td>
+<td style="text-align: left;">Low</td>
+<td style="text-align: left;">Up to 6,000 genes; RNA/protein
+co-detection; fast cycles; FFPE.</td>
+<td style="text-align: left;">Lower specificity; sequential imaging;
+costly.</td>
 </tr>
 </tbody>
 </table>
 
-### 6.2 Sectioning and Mounting
+#### Sequencing-Based Technologies
 
--   Cryosection: **10 µm**
--   Visium: **Capture area 6.5 × 6.5 mm**
-
-### 6.3 Permeabilization
-
--   **Visium**: 12–18 min tissue optimization
--   **MERFISH**: Cell fixation + probe penetration
-
-### 6.4 Quality Control
-
--   **H&E staining**
--   **RNA integrity (RIN)**
--   **Permeabilization test**
-
-## 7. Data Generation and Preprocessing
-
-### 7.1 Image Acquisition
-
--   **Brightfield + fluorescence**
--   **Fiducial markers** for alignment
-
-### 7.2 Barcode Demultiplexing
-
-    spaceranger count --id=sample --image=img.tif --transcriptome=refdata-gex-GRCh38-2020-A
-
-### 7.3 Spatial Registration
-
--   Align **spots to histology**
--   **Louve Browser** (10x)
-
-### 7.4 Noise Filtering
-
--   Remove **ambient RNA, low-quality spots**
-
-## 8. Computational Analysis Pipeline
-
-### 8.1 Spot-Based vs. Pixel-Based
+These use next-generation sequencing for whole-transcriptome analysis,
+ideal for discovery.
 
 <table>
-<thead>
-<tr>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Use</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">Spot</td>
-<td style="text-align: left;">Visium</td>
-</tr>
-<tr>
-<td style="text-align: left;">Pixel</td>
-<td style="text-align: left;">Stereo-seq, MERFISH</td>
-</tr>
-</tbody>
-</table>
-
-### 8.2 Cell Segmentation and Deconvolution
-
--   **BayesSpace, STdeconvolve**
--   **RCTD**: Map scRNA reference to spots
-
-### 8.3 Spatial Clustering
-
--   **SpaGCN, SEDR**
--   Identify **domains** (tumor core vs. stroma)
-
-### 8.4 Integration with scRNA
-
--   **Tangram, Cell2location**
-
-## 9. Visualization of Spatial Data
-
-### 9.1 2D and 3D Heatmaps
-
--   **Seurat, Giotto, Squidpy**
-
-### 9.2 Interactive Tools
-
--   **Loupe Browser** (10x)
--   **Vitessce** (web-based)
-
-### 9.3 Overlay with Histology
-
--   **H&E + gene expression**
-
-### 9.4 VR/AR Interfaces
-
--   **2025: VR brain atlas** using Stereo-seq
-
-## 10. Biological Applications
-
-### 10.1 Developmental Biology
-
--   Mouse gastrulation → anterior-posterior gradients
-
-### 10.2 Tumor Microenvironment
-
--   Breast cancer → immune exclusion zone at invasive front
-
-### 10.3 Neuroanatomy
-
--   Human cortex → layer-specific markers
-
-### 10.4 Host-Pathogen
-
--   TB lung → granuloma center vs. rim
-
-## 11. Clinical and Translational Applications
-
-### 11.1 Biomarker Discovery
-
--   PD-L1 spatial pattern predicts immunotherapy response
-
-### 11.2 Digital Pathology
-
--   AI + Visium → automated tumor grading
-
-### 11.3 Drug Response Mapping
-
--   Organoids → drug penetration gradients
-
-### 11.4 Precision Medicine
-
--   2025: Intraoperative ST in glioma surgery → real-time margin
-
-## 12. Challenges and Limitations
-
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Challenge</th>
-<th style="text-align: left;">Current Solution</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">Resolution vs. throughput</td>
-<td style="text-align: left;">Hybrid platforms</td>
-</tr>
-<tr>
-<td style="text-align: left;">FFPE RNA degradation</td>
-<td style="text-align: left;">Xenium, DSP</td>
-</tr>
-<tr>
-<td style="text-align: left;">Batch effects</td>
-<td style="text-align: left;">ComBat-seq, Harmony</td>
-</tr>
-<tr>
-<td style="text-align: left;">Data size (TB-scale)</td>
-<td style="text-align: left;">Cloud computing</td>
-</tr>
-</tbody>
-</table>
-
-### Summary Table: Spatial Transcriptomics
-
-<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
 <thead>
 <tr>
 <th style="text-align: left;">Technology</th>
-<th style="text-align: left;">Resoultion</th>
-<th style="text-align: left;">Genes</th>
-<th style="text-align: left;">Tissue</th>
-<th style="text-align: left;">Clinical Use</th>
+<th style="text-align: left;">Resolution</th>
+<th style="text-align: left;">Throughput</th>
+<th style="text-align: left;">Pros</th>
+<th style="text-align: left;">Cons</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">Visium HD</td>
-<td style="text-align: left;">2 µm</td>
-<td style="text-align: left;">Genome-wide</td>
-<td style="text-align: left;">Fresh/FFPE</td>
-<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Visium (10x Genomics)</td>
+<td style="text-align: left;">~55 μm (multi-cell)</td>
+<td style="text-align: left;">High</td>
+<td style="text-align: left;">Whole transcriptome; FFPE/fresh; large
+area; protein panels.</td>
+<td style="text-align: left;">No single-cell; low sensitivity for rare
+transcripts; needs deconvolution.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Visium HD (10x Genomics)</td>
+<td style="text-align: left;">~2 μm (near single-cell)</td>
+<td style="text-align: left;">Medium</td>
+<td style="text-align: left;">High resolution; whole transcriptome;
+human/mouse FFPE.</td>
+<td style="text-align: left;">Reduced genes at high res;
+species-limited; smaller area.</td>
 </tr>
 <tr>
 <td style="text-align: left;">Stereo-seq</td>
-<td style="text-align: left;">500 nm</td>
-<td style="text-align: left;">Genome-wide</td>
-<td style="text-align: left;">Fresh</td>
-<td style="text-align: left;">Research</td>
+<td style="text-align: left;">~0.2 μm (near single-cell)</td>
+<td style="text-align: left;">Medium</td>
+<td style="text-align: left;">Nanoscale res; whole transcriptome; all
+species/FFPE; large area.</td>
+<td style="text-align: left;">Diffusion artifacts; specialized
+sequencer; lower sensitivity.</td>
 </tr>
 <tr>
-<td style="text-align: left;">MERFISH</td>
-<td style="text-align: left;">Single-molecule</td>
-<td style="text-align: left;">10,000</td>
-<td style="text-align: left;">Fresh</td>
-<td style="text-align: left;">Brain</td>
-</tr>
-<tr>
-<td style="text-align: left;">Xenium</td>
-<td style="text-align: left;">Single-cell</td>
-<td style="text-align: left;">5,000</td>
-<td style="text-align: left;">FFPE</td>
-<td style="text-align: left;">Pathology</td>
+<td style="text-align: left;">GeoMx DSP (NanoString)</td>
+<td style="text-align: left;">~50 μm (ROI-based)</td>
+<td style="text-align: left;">High</td>
+<td style="text-align: left;">Targeted ROI; RNA/protein; FFPE
+human/mouse; multi-sample.</td>
+<td style="text-align: left;">Predefined ROIs; no single-cell;
+species-limited.</td>
 </tr>
 </tbody>
 </table>
