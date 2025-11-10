@@ -191,3 +191,131 @@ species-limited.</td>
 </tr>
 </tbody>
 </table>
+
+#### Guidance for Selection
+
+-   **High-resolution/targeted**: Imaging-based (e.g., Xenium for
+    subcellular details).
+-   **Unbiased discovery**: Sequencing-based (e.g., Visium for broad
+    coverage).
+-   Consider factors like sample type (FFPE vs. fresh), budget, and
+    species compatibility.
+
+## 3. Comparison to Bulk and Single-Cell RNA-Seq
+
+ST bridges the gap between bulk RNA-seq (averaged profiles) and
+single-cell RNA-seq (scRNA-seq; cellular resolution without space).
+Below is a comparison:
+
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Feature</th>
+<th style="text-align: left;">Bulk RNA-Seq</th>
+<th style="text-align: left;">Single-Cell RNA-Seq (scRNA-seq)</th>
+<th style="text-align: left;">Spatial Transcriptomics (ST)</th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Methodology</td>
+<td style="text-align: left;">Pools RNA from entire sample; mRNA/whole
+transcriptome sequencing.</td>
+<td style="text-align: left;">Isolates cells (e.g., 10x Chromium
+droplets with barcodes/UMIs); sequences individual profiles.</td>
+<td style="text-align: left;">Barcoded arrays/slides capture RNA in
+situ; sequences with spatial mapping (e.g., Visium probes).</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Resolution</td>
+<td style="text-align: left;">Population-level average.</td>
+<td style="text-align: left;">Single-cell.</td>
+<td style="text-align: left;">Spatial (subcellular to multi-cell; e.g.,
+1-55 μm spots).</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Advantages</td>
+<td style="text-align: left;">Cost-effective; detects
+fusions/biomarkers; clinical (diagnosis/prognosis).</td>
+<td style="text-align: left;">Resolves heterogeneity/rare cells;
+microenvironment analysis.</td>
+<td style="text-align: left;">Preserves tissue architecture; cell
+interactions; multimodal (RNA/protein).</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Disadvantages</td>
+<td style="text-align: left;">Masks heterogeneity; sampling bias.</td>
+<td style="text-align: left;">Loses spatial info; dissociation stress;
+low transcript recovery; costly.</td>
+<td style="text-align: left;">Suboptimal resolution; low sensitivity;
+high cost/labor.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Complementary Uses</td>
+<td style="text-align: left;">Foundational for broad profiling; pairs
+with scRNA-seq/ST for depth.</td>
+<td style="text-align: left;">Heterogeneity focus; integrates with ST
+for spatial restoration.</td>
+<td style="text-align: left;">Adds context to bulk/scRNA-seq; ideal for
+tumor microenvironments.</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+
+ST complements by restoring space lost in scRNA-seq, while offering more
+detail than bulk.
+
+## 4. Applications in Biology and Disease
+
+ST uncovers spatially resolved mechanisms, from development to
+pathology. \#### Kidney Disease
+
+-   -   **Injury/Repair**: In biopsies, ST mapped &gt;70 cell types,
+        identifying adaptive proximal tubule states and immune-stromal
+        niches driving repair (e.g., IGF signaling). In IRI models, it
+        localized macrophage activation to S3 tubule cells, revealing
+        sex-specific complement protection.
+-   **CKD/Diabetic Nephropathy**: Defined fibrotic microenvironments;
+    fibroblasts near venous endothelium; correlated TAL neighborhoods
+    with function decline.
+-   **Other**: In stone disease, immune infiltration near deposits
+    upregulated MMPs, linking to proteinuria.
+
+#### Cancer
+
+-   **Tumor Microenvironment**: Mapped melanoma cilia gene upregulation
+    at interfaces; HTAN atlas revealed progression pathways via cell
+    neighborhoods.
+-   **Prostate/Other**: Identified heterogeneous zones; drug targets in
+    infected tissues.
+
+#### Neuroscience
+
+-   **Brain Atlases**: Validated neuronal/glial distributions in visual
+    cortex; integrated with scRNA-seq for chromatin accessibility in
+    neural tissues.
+-   **Disease**: Potential for neurodegeneration via spatial gene
+    variability.
+
+#### Other Areas
+
+-   **Development**: Mapped nephric progenitors in mouse kidneys.
+-   **Transplantation**: Profiled T-cell rejection in allografts; modest
+    infiltration in pig-human xenografts.
+-   **General**: Drug perturbation responses; sepsis timelines.
+
+ST excels in neighborhood mapping and ligand-receptor inference, aiding
+biomarker discovery.
